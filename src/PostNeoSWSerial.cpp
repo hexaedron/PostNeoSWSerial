@@ -539,9 +539,9 @@ size_t PostNeoSWSerial::write(uint8_t txChar)
   if (!txPort)
     return 0;
 
-  uint8_t width;         // ticks for one bit
-  uint8_t txBit  = 0;    // first bit is start bit
-  uint8_t b      = 0;    // start bit is low
+  uint8_t width  = txBitWidth;		// ticks for one bit
+  uint8_t txBit  = 0;    		// first bit is start bit
+  uint8_t b      = 0;			// start bit is low
   uint8_t PCIbit = bit(digitalPinToPCICRbit(rxPin));
 
   uint8_t prevSREG = SREG;
